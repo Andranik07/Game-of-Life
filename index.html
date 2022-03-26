@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <!-- <script src="LivingCreature.js"></script>
+    <script src="people.js"></script>
+    <script src="bomb.js"></script>
+    <script src="grassEater.js"></script>
+    <script src="predator.js"></script>
+    <script src="class.js"></script> -->
+    <script src="script.js"></script>
+    <title>Game of Life 🔥</title>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Francois+One&display=swap');
+    body{
+        margin:0 auto;
+        justify-content: center;
+        margin-top: 50px;
+        background-image: linear-gradient(rgb(232, 247, 102), rgb(153, 236, 241));
+    }
+    canvas{
+        margin-left: 420px;
+    }
+    .head h1{
+        margin-left: 580px;
+        font-size: 50px;
+        font-family: 'Francois One', sans-serif;
+    }
+    .head{
+        height: 70px;
+        margin-top: -40px;
+        margin-bottom: 20px;
+    }
+    table td{
+        color: white;
+    }
+    table td , tr , th {
+        font-family: 'Francois One', sans-serif;
+    }
+    table{
+        text-align: center;
+        margin-left: 370px;
+        margin-bottom: 30px;
+    }
+    button{
+        border: 1px solid white;
+        border-radius: 12px;
+        font-family: 'Francois One', sans-serif;
+        padding: 10px;
+        margin-left: 660px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: white;
+        background-color: navy;
+    }
+    button:hover{
+        transition: 0.2s;
+        border: 1px solid navy;
+        background-color: white;
+        color: navy;
+    }
+    </style>
+</head>
+<body>
+    <div class="head">
+        <h1>Game of Life</h1>
+    </div>
+
+
+    <div>
+        <table>
+
+            <tr>
+                <th>Անվանում</th>
+                <th>Շարժվում է</th>
+                <th>Ուտում է</th>
+            </tr>
+            <tr bgcolor="#00ff00">
+                <td>Խոտ</td>
+                <td>Տարածվում է ամբողջ վանդակներով</td>
+                <td></td>
+            </tr>
+            <tr bgcolor="#d8d827">
+                <td>Խոտակեր</td>
+                <td>Շրջակա 8 վանդակները , էներգիան պակասում է</td>
+                <td>Խոտերին , էներգիան ավելանում է</td>
+            </tr>
+            <tr bgcolor="#FF0000">
+                <td>Գիշատիչ</td>
+                <td>Շրջակա 8 վանդակները , էներգիան պակասում է</td>
+                <td>Խոտակերներին , էներգիան ավելանում է</td>
+            </tr>
+            <tr bgcolor="#000000">
+                <td>Ռումբ</td>
+                <td>Շրջակա 8 վանդակները , էներգիա չունի</td>
+                <td>Գիշատիչներին դարձնում է խոտ և մահանում</td>
+            </tr>
+            <tr bgcolor="#000080">
+                <td>Մարդ</td>
+                <td>Շրջակա 8 վանդակները , էներգիան պակասում է</td>
+                <td>Ուտում է ռումբերին</td>
+            </tr>
+
+        </table>
+
+        <button id="button">Add People</button>
+    </div>
+</body>
+</html>
