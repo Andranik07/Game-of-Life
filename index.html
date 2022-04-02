@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script> -->
     <!-- <script src="LivingCreature.js"></script>
     <script src="people.js"></script>
     <script src="bomb.js"></script>
@@ -24,7 +25,7 @@
         background-image: linear-gradient(rgb(232, 247, 102), rgb(153, 236, 241));
     }
     canvas{
-        margin-left: 420px;
+        margin-left : 300px;
     }
     .head h1{
         margin-left: 580px;
@@ -45,14 +46,14 @@
     table{
         text-align: center;
         margin-left: 370px;
-        margin-bottom: 30px;
+        margin-bottom: 30px; 
     }
     button{
         border: 1px solid white;
         border-radius: 12px;
         font-family: 'Francois One', sans-serif;
         padding: 10px;
-        margin-left: 660px;
+        margin-left: 500px;
         margin-bottom: 20px;
         font-size: 18px;
         color: white;
@@ -64,6 +65,59 @@
         background-color: white;
         color: navy;
     }
+    #grass{
+        border: 1px solid white;
+        border-radius: 12px;
+        font-family: 'Francois One', sans-serif;
+        padding: 10px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #00ff00;
+    }
+    #grass:hover{
+        transition: 0.2s;
+        border: 1px solid #00ff00;
+        background-color: white;
+        color: #00ff00;
+    }
+    #grasseat{
+        border: 1px solid white;
+        border-radius: 12px;
+        font-family: 'Francois One', sans-serif;
+        padding: 10px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #d8d827;
+    }
+    #grasseat:hover{
+        transition: 0.2s;
+        border: 1px solid #d8d827;
+        background-color: white;
+        color: #d8d827;
+    }
+    #pred{
+        border: 1px solid white;
+        border-radius: 12px;
+        font-family: 'Francois One', sans-serif;
+        padding: 10px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #FF0000;
+    }
+    #pred:hover{
+        transition: 0.2s;
+        border: 1px solid #FF0000;
+        background-color: white;
+        color: #FF0000;
+    }
+    
+    
     </style>
 </head>
 <body>
@@ -108,7 +162,11 @@
 
         </table>
 
-        <button id="button">Add People</button>
+        <button  onclick=addpeop() id="button">Add People</button>
+        <button  onclick=addgr() id="grass">Add Grass</button>
+        <button  onclick=addgreater() id="grasseat">Add GrassEater</button>
+        <button  onclick=addpred() id="pred">Add Predator</button>
+
     </div>
 </body>
 </html>

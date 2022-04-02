@@ -23,7 +23,7 @@ module.exports = class Bomb extends LivingCreature {
     move() {
         this.getNewCoordinates()
         var found = this.chooseCell(1);
-        var newCell = random(found);
+		var newCell = found[Math.floor(Math.random() * found.length)]
         if (newCell) {
             var newX = newCell[0];
             var newY = newCell[1];
@@ -34,15 +34,15 @@ module.exports = class Bomb extends LivingCreature {
             this.x = newX;
             this.y = newY;
         }
-        console.log('move-bomb');
+    
     }
 
 
     explode() {
         this.getNewCoordinates()
         var found = this.chooseCell(3);
-        var newCell = random(found);
-        if (newCell) {
+        var newCell = found[Math.floor(Math.random() * found.length)]
+          if (newCell) {
             var newX = newCell[0];
             var newY = newCell[1];
             matrix[newY][newX] = 1;
